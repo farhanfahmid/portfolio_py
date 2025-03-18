@@ -53,3 +53,19 @@ with col4:
         st.image('images/' + row['image'])
         st.write(f"[Source Code]({row['code']})")
         st.write(f"[Check it Out]({row['demo']})")
+
+# st.sidebar.markdown("[LinkedIn](https://www.linkedin.com/in/farhan-fahmid-966935205/)", unsafe_allow_html=True)
+
+
+
+# st.sidebar.markdown(
+#     '<a href="https://www.linkedin.com/in/farhan-fahmid-966935205/" target="_blank" style="text-decoration: none;">'
+#     '🔗 Connect on LinkedIn</a>',
+#     unsafe_allow_html=True
+# )
+# st.sidebar.markdown(
+#     '<a href="https://www.facebook.com/farhan.fahmid.3" target="_blank" style="text-decoration: none;">'
+#     '🔗 Find me on Facebook</a>',
+#     unsafe_allow_html=True
+# )
+

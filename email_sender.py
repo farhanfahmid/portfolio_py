@@ -1,18 +1,24 @@
-import smtplib #for email
-import ssl
+import requests
+import streamlit as st
+
+# Your Formspree endpoint
+FORMSPREE_URL = "https://formspree.io/f/mnnpnozd"
 
 
-def send_mail(message):
-    host = "smtp.gmail.com"
-    port = 465
-    username = "fahmidfarhan274@gmail.com"
-    password = "dwfe wpzg xokv pzxd"
-    receiver = "fahmidfarhan274@gmail.com"
-    context = ssl.create_default_context()
+def send_email(name, sender_email, message):
+    """Sends a form submission to Formspree."""
+    data = {
+        "name": name,
+        "email": sender_email,
+        "message": message
+    }
 
+    response = requests.post(FORMSPREE_URL, data=data)
 
-    with smtplib.SMTP_SSL(host, port, context=context) as server:
-        server.login(username, password)
-        server.sendmail(username, receiver, message)
+    if response.status_code == 200:
+        return True
+    else:
+        return False
+
 
 
